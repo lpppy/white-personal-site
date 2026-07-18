@@ -71,8 +71,16 @@ h1 em,h2 em{font-style:italic;color:var(--acid)}
 .coord-row span,.coord-row small{font:500 .56rem var(--mono);color:var(--muted);text-transform:uppercase}
 .coord-row strong{font:400 1.35rem var(--serif)}
 .route-map{grid-column:2;width:100%;height:auto;margin-top:5rem;overflow:visible}
-.route-map path{stroke:var(--acid);stroke-width:1.3;stroke-dasharray:4 6}
-.route-map circle{fill:var(--ink);stroke:var(--acid);stroke-width:2}
+.route-map .route-line{stroke:var(--acid);stroke-width:2;stroke-linecap:round}
+.route-map circle{fill:var(--ink);stroke:var(--acid);stroke-width:3}
+.route-map text{fill:var(--paper);font:600 12px var(--mono);letter-spacing:.08em}
+.route-map text tspan:first-child,.route-kicker{fill:var(--muted);font-size:9px}
+.route-map .route-stop-final circle{fill:var(--acid)}
+.route-map .route-stop-final text tspan:last-child{fill:var(--acid)}
+.route-map .route-stop-home circle{fill:var(--brick);stroke:var(--paper)}
+.route-map .route-stop-base circle{fill:var(--acid)}
+.route-map .route-stop-home text tspan:last-child{fill:#e6b3a4}
+.route-map .route-stop-base text tspan:last-child{fill:var(--acid)}
 .contact{background:var(--brick);min-height:90vh;display:grid;grid-template-columns:1fr minmax(0,1.55fr);gap:3vw;position:relative}
 .contact .section-label{color:#e6b3a4}
 .contact .section-label span:first-child{color:var(--acid)}
@@ -150,6 +158,7 @@ nav{display:none}
 }
 @media(prefers-reduced-motion:reduce){.mosaic-cell img{transition:none}
 }
+@media(max-width:800px){.route-map{width:140%;max-width:none;margin-left:-20%}.route-map text{font-size:15px}.route-map text tspan:first-child,.route-kicker{font-size:11px}.route-map .route-line{stroke-width:3}.route-map circle{stroke-width:4}}
 .notes-page{background:#121313}
 .notes-nav{position:absolute}
 .notes-shell{padding:0 4vw}
